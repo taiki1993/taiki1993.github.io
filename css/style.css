@@ -1,0 +1,29 @@
+/* Common Style -------------------------- */
+
+body{
+    font-size:14px;
+    font-family:-apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+    line-height:1.6;
+    font-weight:normal;
+}
+
+
+a{
+    color:#CCC;
+    text-decoration: none;
+}
+
+a:hover{
+    color:#DDD;
+    text-decoration: none;
+}
+
+
+/* Header -------------------------- */
+
+
+
+
+
+
+/* Footer -------------------------- */

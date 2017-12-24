@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>test for devicemotion</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<h1>aaaaaa</h1>
+<ul>
+    <li></li>
+    <li></li>
+    <li></li>
+</ul>
+<script src="https://code.jquery.com/jquery-3.2.1.min.js">
+// domの読み込み
+$(function(){
+
+    // device motion event
+    window.addEventListener('devicemotion',shakeDevice);
+
+    // スマホを振ったら呼び出される関数
+    function shakeDevice(evt){
+        console.log(evt);
+          // x軸
+          var x = evt.acceleration.x;
+          // y軸
+          var y = evt.acceleration.y;
+          // z軸
+          var z = evt.acceleration.z;
+
+          $('ul il:eq(0)').text('x: ' + x);
+          $('ul il:eq(1)').text('y: ' + y);
+          $('ul il:eq(2)').text('z: ' + z);
+
+          // スマホを降ったら
+          if(  Math.abs(x) > 10  ||  Math.abs(y)  ||  Math.abs(z)  ){
+              $('h1').text('降り終わったよ');
+              window.removeEventListener('devicemotion')
+        }
+    }
+
+});
+
+
+</script>
+</body>
+</html>
