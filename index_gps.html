@@ -29,10 +29,20 @@ $(function(){
         console.log(pos);
         var lat = pos.coords.latitude; //緯度
         var lon = pos.coords.longitude; //軽度
+
+        lat = calLocation(lat);
+        lon = calLocation(lon);
+
         console.log('lat: ' + lat, 'lon: ' + lon);
 
-        $(' ul li:eq(0) ').text('lat: ' + lat);
     });
+
+        // 少数2桁で切り捨てる関数
+        function calLocation(num){
+            var numA = num*100; //2桁あがる
+            numA = Math.floor(numA)/100; //切り捨てて2桁下げる
+            return numA;
+        }
 
 });
 
