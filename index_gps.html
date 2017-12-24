@@ -36,9 +36,34 @@ $(function(){
         console.log('lat: ' + lat, 'lon: ' + lon);
 
         $('ul li:eq(0)').text('緯度: ' + lat);
-        $('ul li:eq(1)').text('径度: ' + lon);
+        $('ul li:eq(1)').text('経度: ' + lon);
+
+        setWeather(lat,lon); //緯度経度を受け渡し
 
     });
+
+        // 天気を表示する関数
+        function setWeather(lat,lon){
+
+            // APIキー
+            var apikey = '3522942673b50b75f4af77f2b2d436bd';
+            // openWeatherMap用のURL
+            var Weatherurl = 'api.openweathermap.org/data/2.5/weather?lat= '+lat+'&lon='+lon+'&appid=' + apikey;
+            // Ajax通信
+            $.ajax({
+                url:Weatherurl,
+                dataType = 'json'
+            }) .done(functon(data){
+                // 通信成功
+                console.log(data);
+                // 地域名前
+                var areaName = data.name;
+                $('#areaName').text(areaName);
+
+            }).fail(function(){
+                console.log('ajax error');
+            });
+        }
 
         // 少数2桁で切り捨てる関数
         function calLocation(num){
