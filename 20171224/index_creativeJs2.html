@@ -43,12 +43,27 @@
                 tomato.alpha = 0;
                 createjs.Tween.get(tomato).wait(500).to({alpha:1},1000);
 
-            // sprite
-            var calciumSpriteSheet = new createjs.SpriteSheet(calciumSprite);
-            var calcium = new createjs.Sprite(calciumSpriteSheet,'stand');
-            stage.addChild(calcium);
-            calcium.x = 300;
-            calcium.y = 100;
+                // sprite
+                var calciumSpriteSheet = new createjs.SpriteSheet(calciumSprite);
+                var calcium = new createjs.Sprite(calciumSpriteSheet,'stand');
+                stage.addChild(calcium);
+                calcium.x = 0;
+                calcium.y = 300;
+                calcium.alpha = 0;
+                createjs.Tween.get(calcium).wait(1000).to({alpha:1},1000);
+                // クリックしたら
+                calcium.addEventListener('click',function(){
+                    createjs.Tween.get(calcium).call(calciumWalk).to({x:400},2000).call(calciumStop);
+                })
+
+                // 歩き動作
+                function calciumWalk(){
+                    calcium.gotoAndPlay('walk');
+                }
+                // 止まる動作
+                function calciumStop(){
+                    calcium.gotoAndPlay('stop');
+                }
 
             }
             createjs.Ticker.addEventListener('tick',tick);
