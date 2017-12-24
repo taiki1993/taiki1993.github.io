@@ -61,7 +61,9 @@ $(function(){
                 var areaName = data.name;
                 $('#areaName').text(areaName);
                 // 気温
-                var areaTemp = data.main.temp;
+                var areaTemp = data.main.temp; //絶対温度
+                areaTemp = areaTemp - 273.15;
+                $('#areaTemp').text(Math.round(areaTemp)+'度');
 
             }).fail(function(){
                 console.log('ajax error');
