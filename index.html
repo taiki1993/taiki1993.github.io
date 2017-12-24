@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<h1>aaaaaa</h1>
+<h1>devicemotionのテスト</h1>
 <ul>
     <li></li>
     <li></li>
@@ -19,8 +19,9 @@
 <script src="https://code.jquery.com/jquery-3.2.1.min.js">
 // domの読み込み
 $(function(){
+    console.log('読み込んだよ');
 
-    // device motion event
+    // devicemotion event
     window.addEventListener('devicemotion',shakeDevice);
 
     // スマホを振ったら呼び出される関数
@@ -33,14 +34,14 @@ $(function(){
           // z軸
           var z = evt.acceleration.z;
 
-          $('ul il:eq(0)').text('x: ' + x);
-          $('ul il:eq(1)').text('y: ' + y);
-          $('ul il:eq(2)').text('z: ' + z);
+          $('ul li:eq(0)').text('x: ' + x);
+          $('ul li:eq(1)').text('y: ' + y);
+          $('ul li:eq(2)').text('z: ' + z);
 
           // スマホを降ったら
-          if(  Math.abs(x) > 10  ||  Math.abs(y)  ||  Math.abs(z)  ){
+          if(  Math.abs(x) > 10  | |  Math.abs(y) > 10  | |  Math.abs(z) > 10  ){
               $('h1').text('降り終わったよ');
-              window.removeEventListener('devicemotion')
+              window.removeEventListener('devicemotion',shakeDevice);
         }
     }
 
