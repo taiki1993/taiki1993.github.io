@@ -11,11 +11,17 @@
 <body>
 
 <h1>geolocation</h1>
-<ul>
-    <li></li>
-    <li></li>
-    <li></li>
-</ul>
+<dl id="weatherMap">
+        <dt>地域名：</dt>
+        <dd id="areaName"></dd>
+        <dt>現在の気温</dt>
+        <dd id="areaTemp"></dd>
+        <dt>湿度</dt>
+        <dd id="areaHumidity"></dd>
+        <dt>天気</dt>
+        <dd id="areaWeather"></dd>
+        <dd id="weatherIcon"></dd>   
+</dl>
 <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 <script>
 // domの読み込み
@@ -62,8 +68,9 @@ $(function(){
                 $('#areaName').text(areaName);
                 // 気温
                 var areaTemp = data.main.temp; //絶対温度
-                areaTemp = areaTemp - 273.15;
+                areaTemp = areaTemp - 273.15; //摂氏
                 $('#areaTemp').text(Math.round(areaTemp)+'度');
+
 
             }).fail(function(){
                 console.log('ajax error');
