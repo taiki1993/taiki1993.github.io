@@ -51,8 +51,8 @@ $(function(){
             var Weatherurl = 'api.openweathermap.org/data/2.5/weather?lat= '+lat+'&lon='+lon+'&appid=' + apikey;
             // Ajax通信
             $.ajax({
-                url:Weatherurl,
-                dataType = 'json'
+                url:weatherUrl,
+                dataType: 'json'
             }) .done(functon(data){
                 // 通信成功
                 console.log(data);
