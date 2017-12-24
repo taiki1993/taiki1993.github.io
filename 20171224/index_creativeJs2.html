@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="stage" width="1024" height="768"></canvas>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+    <script src="sprite.js"></script>
+    <script>
+        // domの読み込み
+        $(function(){
+            // canvasの取得
+            var stage = new createjs.Stage('stage');
+
+            // 画像の登録
+            var manifest = [
+                {src:'img/tomato.png'},
+                {src:'img/calcium.png'}
+            ];
+
+            // LoadQueue プリロード
+            var loadQueue = new createjs.LoadQueue();
+
+            // ファイルの指定 読み込み開始
+            loadQueue.loadManifest(manifest);
+
+            // 画像を全部読み込み終わったら
+            loadQueue.addEventListener('complete',function(){
+               console.log('読み濃み官僚');
+               addStage();
+            });
+
+            // ステージに配置
+            function addStage(){
+                // Bitmap
+                var tomato = new createjs.Bitmap(manifest[0].src);
+                stage.addChild(tomato);
+                tomato.x = 100;
+                tomato.y = 100;
+                tomato.alpha = 0;
+                createjs.Tween.get(tomato).wait(500).to({alpha:1},1000);
+
+            // sprite
+            var calciumSpriteSheet = new createjs.SpriteSheet(calciumSprite);
+            var calcium = new createjs.Sprite(calciumSpriteSheet,'stand');
+            stage.addChild(calcium);
+            calcium.x = 300;
+            calcium.y = 100;
+
+            }
+            createjs.Ticker.addEventListener('tick',tick);
+            //requestAnimationFrameの実行
+            createjs.Ticker.timingMode = createjs.Ticker.RAF_SYNCHED;
+
+            function tick(){
+                stage.update(); //描画の更新
+            }
+
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="stage" width="1024" height="768"></canvas>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script src="https://code.createjs.com/createjs-2015.11.26.min.js"></script>
+    <script>
+        // domの読み込み
+        $(function(){
+            // canvasの取得
+            var stage = new createjs.Stage('stage');
+
+            // 図形の描画（丸）
+            var circle = new createjs.Shape();
+            circle.graphics.beginFill('#DF01D7').drawCircle(0,0,30);
+            stage.addChild(circle); //ステージの配置
+            circle.x = 50;
+            circle.y = 50;
+            // トゥイーンアニメーション
+            createjs.Tween.get(circle)
+            .to({x:400,y:400,alpha:0.5},3000, createjs.Ease.backOut)
+            .to({x:600,y:30},2000, createjs.Ease.cubicIn) //1000は一秒
+            .to({x:800,y:600,scaleX:2,scaleY:2},2000, createjs.Ease.bounceOut)
+            .call(nextAnime);
+
+            function nextAnime(){
+                console.log('next animation');
+                circle.scaleX = 1;
+                circle.scaleY = 1;
+            }
+
+            // （星）
+            var star = new createjs.Shape();
+            star.graphics.beginFill('#00ff00').drawPolyStar(0,0,40,5,0.6,-90);
+            stage.addChild(star);
+            star.x = stage.canvas.width/2;
+            star.y = stage.canvas.height/2
+
+            // （長方形）
+            var rect = new createjs.Shape();
+            rect.graphics.beginFill('#FF0000').drawRect(0,0,300,50); //rectは左基点
+            stage.addChild(rect);
+            rect.x = 400;
+            rect.y = 800;
+            rect.alpha = 0.5; //透明
+            // rect.visible = false; //非表示
+
+            createjs.Ticker.addEventListener('tick',tick);
+            //requestAnimationFrameの実行
+            createjs.Ticker.timingMode = createjs.Ticker.RAF_SYNCHED;
+
+            function tick(){
+                // circleの動き
+                // circle.x += 200;
+                // if(circle.x > stage.canvas.width){
+                //     circle.x = 0;
+                // }
+
+                // starの動き
+                star.rotation += 3;
+                if(star.rotation >= 360){
+                    star.rotation = 0;
+                }
+
+                // rectの動き
+                rect.y += 2;
+                if(rect.y > stage.canvas.height){
+                    rect.y = 0;
+                }
+
+                stage.update(); //描画の更新
+            }
+
+        });
+    </script>
+
+</body>
+</html>
