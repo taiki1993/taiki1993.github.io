@@ -49,9 +49,10 @@ $(function(){
             var apikey = '3522942673b50b75f4af77f2b2d436bd';
             // openWeatherMap用のURL
             var Weatherurl = 'api.openweathermap.org/data/2.5/weather?lat= '+lat+'&lon='+lon+'&appid=' + apikey;
+            
             // Ajax通信
             $.ajax({
-                url:weatherUrl,
+                url:Weatherurl,
                 dataType: 'json'
             }) .done(functon(data){
                 // 通信成功
