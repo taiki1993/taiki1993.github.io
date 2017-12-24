@@ -36,12 +36,12 @@ $(function(){
           // z軸
           var z = evt.acceleration.z;
 
-          $('ul li:eq(0)').text('x: ' + x);
+          $(' ul li:eq(0) ').text('x: ' + x);
           $('ul li:eq(1)').text('y: ' + y);
           $('ul li:eq(2)').text('z: ' + z);
 
           // スマホを降ったら
-          if(  Math.abs(x) > 10  | |  Math.abs(y) > 10  | |  Math.abs(z) > 10  ){
+          if(  Math.abs(x) > 10  ||  Math.abs(y) > 10  ||  Math.abs(z) > 10  ){
               $('h1').text('降り終わったよ');
               window.removeEventListener('devicemotion',shakeDevice);
         }
