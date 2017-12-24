@@ -35,6 +35,9 @@ $(function(){
 
         console.log('lat: ' + lat, 'lon: ' + lon);
 
+        $('ul li:eq(0)').text('緯度: ' + lat);
+        $('ul li:eq(1)').text('径度: ' + lon);
+
     });
 
         // 少数2桁で切り捨てる関数
