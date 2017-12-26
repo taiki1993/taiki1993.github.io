@@ -1,0 +1,29 @@
+h1 {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+
+.navigation-gazou {
+    float: left;
+    padding-top: 20px;
+}
+
+.navigation li {
+    float: right;
+    display: inline;
+    padding: 20px;
+    margin: 20px;
+
+}
+
+.works h2 {
+    padding-right: 20px;
+    padding-top: 100px;
+
+}
+
+.worksimage {
+
+}

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>03_for</title>
+    <style>
+    #container{
+        width: 800px;
+        height: 400px;
+        position: relative;
+        overflow: hidden;
+        background: url(img/bg.png) center bottom no-repeat;
+        margin-bottom: 10px;
+    }
+    .btn{
+        width: 100px;
+        height: 40px;
+        font-size: 16px;
+        background-color: #DDD;
+        border-radius: 10px;
+        text-align: center;
+        line-height: 2.5;
+        float: left;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    </style>
+</head>
+<body>
+<div id="container">
+
+</div>
+<div id="dinoBtn" class="btn">DINO</div>
+<div id="allBtn" class="btn">ALL</div>
+
+<script>
+    // for(var i=0; i<10; i++) {
+        // console.log(i);
+    // }
+
+    var container = document.querySelector('#container')
+    console.log(container);
+
+    // #dinoBtnをクリックしたら関数addDinoを呼び出す
+    document.querySelector('#dinoBtn').addEventListener('click',addDino);
+
+    function addDino() {
+        console.log('#dinoBtnがクリックされたyo');
+        // imgタグを作成
+        var imgTag = document.createElement('img');
+
+        // 2 src属性を追加してimg/dino.pngを指定
+        imgTag.setAttribute('src','img/dino.png');
+        imgTag.setAttribute('alt','dino');
+
+        console.log(imgTag);
+
+        //  3.#containerにimgTagを追加
+        container.appendChild(imgTag);
+    }
+
+        // 3:40:50まで視聴済
+
+</script>
+
+
+</body>
+</html>

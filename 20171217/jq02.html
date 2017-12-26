@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>jQueryの練習</title>
+    <link rel="stylesheet" href="/Users/shangendashu/Desktop/20171217/jq01.css">
+
+
+</head>
+<body>
+<h1 id="title">ドリンクメニュー</h1>
+<ul id="menu">
+    <li>ブレンドコーヒー</li>
+    <li>カフェラテ</li>
+    <li>カプチーノ</li>
+    <li>マキアート</li>
+</ul>
+<div id="photo">
+    <img src="/Users/shangendashu/Desktop/20171217/img/cafeLatte01.jpg" alt="ラテアート">
+    <p id="caption">ラテアート</p>
+</div>
+<button id="btn">クリック</button>
+
+<!-- jQueryの読み込みの時に必要なurl -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script>
+// DOMの読み込み
+$(function(){
+    // document.querySelector('#btn').addEventListner('click',xxxx);
+    $('#btn').on('click', function(){
+
+        $('#menu li').each(function(index){
+            console.log(index);
+            var txt = $(this).text(); //テキストの取得
+            console.log(txt);
+        });
+
+            // テキストの上書き
+            //$('#menu li:eq(1)').text('iceコーヒー');
+
+            // 先頭に追加 prepend
+            //$('#menu').prepend('<li>カフェもか</li>');
+
+            // 最後に追加 append
+            //$('#menu').append('<li>フラペチーノ</li>');
+
+            //liの最後に送る
+            //$('#menu li:eq(0)').appendTo('#menu');
+
+            //liの先頭に送る
+            $('#menu li:eq(3)').prependTo('#menu');
+
+            //imgの差し替え
+            $('#photo img').attr('src','/Users/shangendashu/Desktop/20171217/img/cafeLatte02.jpg').attr('alt','pronto');
+            //↑jQueryは上のやつみたいに繋げれる
+
+            //削除
+            $('#caption').remove();
+
+            //非表示（つけたり消したりしたいとき）
+            //逆はshow()
+            $('#caption').hide();
+
+    });
+});
+
+</script>
+
+</body>
+</html>

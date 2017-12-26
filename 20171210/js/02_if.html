@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <title>02_if</title>
+    <style>
+    #container{
+        width: 800px;
+        height: 400px;
+        position: relative;
+        overflow: hidden;
+        background: url(img/bg.png) center bottom no-repeat;
+        margin-bottom: 10px;
+    }
+    .btn{
+        width: 100px;
+        height: 40px;
+        font-size: 16px;
+        background-color: #DDD;
+        border-radius: 10px;
+        text-align: center;
+        line-height: 2.5;
+        float: left;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    #stego{
+        position: absolute;
+        width: 200px;
+        height: auto;
+        left: 0;
+        top:200px;
+    }
+    #stego img{
+        width: 200px;
+        height: auto;
+    }
+    </style>
+</head>
+<body>
+
+<div id="container">
+    <div id="stego"><img src="img/stego.png" alt="ステゴザウルス"></div>
+</div>
+<div id="leftBtn" class="btn">左へ移動</div>
+<div id="rightBtn" class="btn">右へ移動</div>
+<!-- <div id="animeLeft" class="btn">左へアニメ</div>
+<div id="animeRight" class="btn">右へアニメ</div>
+<div id="animeStop" class="btn">ストップ</div> -->
+
+<script>
+
+    var now = new Date(); //日時の取得
+    console.log(now);
+    var hour = now.getHours(); //日時の中から時間を取得
+    console.log(hour);
+
+    if (hour<12) {
+         console.log('午前中death');
+
+    } else {
+        console.log('午後death');
+
+    }// else if (hour == 12) {
+        // console.log('正午death');
+
+    // }
+
+    var stegoPos = 0;
+
+    // 変数stegoを作って#stegoを保存
+    var stego = document.querySelector('#stego');
+    console.log(stego);
+
+    // #rightBtnをクリックしたら関数moveRightを呼ぶ
+    document.querySelector('#rightBtn').addEventListener('click',moveRight);
+
+    // #left
+    document.querySelector('#leftBtn').addEventListener('click',moveLeft);
+
+    // 関数moverightを作って右に移動
+    function moveRight() {
+        console.log('#moveRightが押されたyo');
+        // 現在のstegoPosに10足して上書き
+        stegoPos = stegoPos + 50;
+        console.log(stegoPos);
+        stego.style.left = stegoPos + 'px';
+
+        // もしstegoPosが800以上になったらstegoPosを-200におく
+        if (stegoPos>800) {
+            stegoPos = -200;
+        }
+    }
+
+    // 左
+    function moveLeft() {
+        console.log('#moveLeftが押された');
+        stegoPos = stegoPos - 50;
+        console.log(stegoPos);
+        stego.style.left = stegoPos + 'px';
+
+        if(stegoPos<-200) {
+            stegoPos = 800;
+        }
+    }
+
+
+</script>
+
+
+</body>
+</html>
