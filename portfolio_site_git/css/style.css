@@ -179,6 +179,13 @@ header {
     box-sizing: border-box;
 }
 
+#stage {
+    background: url(/Users/shangendashu/Desktop/taiki1993.github.io/portfolio_site_git/portfolio_yamane-assets/portfolio_main_back_ok.png);
+    max-width: 95%;
+    background-size: cover;
+    height: auto;
+}
+
 @media (max-width:767px) {
     .mobilemenu {
         width: 50px;
@@ -329,6 +336,11 @@ p {
         width: 100%;
         border-bottom: solid 100% #c8c8c8 ;
         margin-top: 80px;
+    }
+
+    .box1 {
+        margin-top: 0px;
+        margin-right: 11%;
     }
 
     .works {

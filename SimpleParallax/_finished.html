@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>simple parallax</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+    <style>
+    .parallax-window{
+        min-height:600px;
+        background: transparent;
+    }
+    section{
+        min-height: 600px;
+        background-color: #FFF;
+    }
+    section h1{
+        font-size: 36px;
+    }
+    section p{
+        font-size: 16px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg01.jpg"></div>
+    <section>
+        <h1>Title</h1>
+        <p>Pragraph</p>
+    </section>
+    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg02.jpg"></div>
+    <section>
+        <h1>Title</h1>
+        <p>Pragraph</p>
+    </section>
+    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg03.jpg"></div>
+    <section>
+        <h1>Title</h1>
+        <p>Pragraph</p>
+    </section>
+    <div class="parallax-window" data-parallax="scroll" data-image-src="img/bg04.jpg"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.slim.min.js"></script>
+    <script src="js/parallax.min.js"></script>
+</body>
+</html>

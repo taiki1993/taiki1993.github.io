@@ -1,0 +1,217 @@
+@charset "UTF-8";
+
+/* common -------------------------------------------- */
+body {
+  font-family: Helvetica, Arial, "ヒラギノ角ゴ Pro W3", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.8;
+  color: #333333;
+  -webkit-text-size-adjust: 100%;
+  background: #acdec8;
+  letter-spacing: .05em;
+}
+a {
+  color: #005260;
+  text-decoration: underline;
+}
+a:hover {
+  color: #e96243;
+}
+
+
+
+/* header --------------------------------------------------------  */
+header {
+  width: 100%;
+  height: 790px;
+  position: relative;
+  overflow: hidden;
+  border-bottom: 10px #005260 solid;
+}
+header .inner {
+  width: 1280px;
+  height: 780px;
+  margin: 0 auto 0;
+  overflow: hidden;
+  background-image: url(../img/home_tree.png), url(../img/home_flower.png), url(../img/cloud01.png), url(../img/cloud02.png);
+  background-position: 20px bottom, right bottom, 10px -60px,right -10px;
+  background-repeat: no-repeat,no-repeat,no-repeat,no-repeat;
+  background-size: 600px auto, 91px auto, 320px auto, 250px auto;
+}
+header h1 {
+  width: 308px;
+  margin: 30px auto 5px;
+}
+header h1 img {
+  width: 308px;
+  height: auto;
+}
+header h2 {
+  width: 750px;
+  margin: 10px auto 20px;
+}
+header h2 img {
+  width: 750px;
+  height: auto;
+}
+header .headercopy {
+  font-family: "Rounded Mplus 1c";
+  width: 100%;
+  font-size: 24px;
+  text-align: center;
+  color: #dd5f43;
+  margin: 0 0 570px;
+}
+header .bottomBlass {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  background-image: url(../img/bg_grass.png);
+  background-position: 0 50px;
+  background-repeat: repeat-x;
+  background-size: 100px auto;
+  z-index: 2000;
+}
+
+/* header charactor */
+
+header .childDino {
+  position: absolute;
+  width: 450px;
+  left: 50%;
+  bottom: -50px;
+  margin-left: -500px;
+  z-index: 1000;
+  transition: .4s cubic-bezier(.2,1,.2,1);
+}
+header .childDino img {
+  width: 450px;
+  height: auto;
+}
+header .momDino {
+  position: absolute;
+  width: 700px;
+  left: 50%;
+  bottom: -100px;
+  margin-left: -200px;
+  z-index: 900;
+  transition: .8s cubic-bezier(.2,1,.2,1);
+}
+header .momDino img {
+  width: 700px;
+  height: auto;
+}
+header .putera {
+  position: absolute;
+  width: 300px;
+  left: 50%;
+  top: 180px;
+  margin-left: -600px;
+  z-index: 920;
+  transition: 1s cubic-bezier(.2,1,.2,1);
+}
+header .putera img {
+  width: 300px;
+  height: auto;
+}
+
+
+
+
+/* .play ------------------------------------------------------------------ */
+.play {
+  width: 100%;
+  height: 960px;
+  overflow: hidden;
+  border-bottom: 10px #005260 solid;
+  background-color: #1b2a52;
+  position: relative;
+}
+.play .inner {
+  width: 1280px;
+  height: 960px;
+  margin: 0 auto 0;
+  background-image: url(../img/night_tree.png), url(../img/night_shida.png);
+  background-position: 20px bottom,right bottom;
+  background-repeat: no-repeat, no-repeat;
+  background-size: 350px auto, 160px auto;
+}
+.play h1 {
+  font-family: "Rounded Mplus 1c";
+  font-size: 30px;
+  text-align: center;
+  color: #e96243;
+  margin: 10px 0 10px;
+}
+.play .babyDino {
+  width: 126.5px;
+  margin: 60px auto 0;
+}
+.play .babyDino img {
+  width: 126.5px;
+  height: auto;
+}
+.play p {
+  font-family: "Rounded Mplus 1c";
+  font-size: 14px;
+  text-align: center;
+  color: #FFF;
+  margin-bottom: 10px;
+}
+.play .ipadAir {
+  width: 676px;
+  margin: 0 auto 220px;
+}
+.play .ipadAir img {
+  width: 676px;
+  height: auto;
+}
+.play .bottomBlass {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 150px;
+  background-image: url(../img/bg_grass.png);
+  background-position: 0 50px;
+  background-repeat: repeat-x;
+  background-size: 100px auto;
+  z-index: 2000;
+}
+.play .bottomBlass .copyright {
+  text-align: center;
+  font-size: 11px;
+  font-size: 0.6875rem;
+  font-family: Helvetica, Arial, Sans-serif;
+  color: #acdec8;
+  line-height: 22;
+}
+
+/* play charactor  */
+.play .stego {
+  position: absolute;
+  width: 418.5px;
+  left: 50%;
+  bottom: 60px;
+  margin-left: -800px;
+  transition: 2s cubic-bezier(.2,1,.2,1);
+}
+.play .stego img {
+  width: 418.5px;
+  height: auto;
+}
+.play .tirano {
+  position: absolute;
+  width: 613px;
+  left: 50%;
+  bottom: 50px;
+  margin-left: 500px;
+  transition: 2s cubic-bezier(.2,1,.2,1);
+}
+.play .tirano img {
+  width: 613px;
+  height: auto;
+}
