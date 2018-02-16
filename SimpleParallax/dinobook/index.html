@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head >
+<head>
+<meta charset="utf-8">
+<title>DINO BOOK | Panon Public</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+<link href="https://fonts.googleapis.com/earlyaccess/roundedmplus1c.css" rel="stylesheet" />
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header>
+    <div class="inner">
+      <h1><img src="img/logoPanon.png" alt="PANON PUBLIC"></h1>
+      <h2><img src="img/logoDino.png" alt="DINO BOOK"></h2>
+      <p class="headercopy">iPadであそぶパノラマの絵本</p>
+      <div class="childDino"><img src="img/maindino.png" alt=""></div>
+      <div class="momDino"><img src="img/motherdino.png" alt=""></div>
+      <div class="putera"><img src="img/putera.png" alt=""></div>
+    </div>
+    <div class="bottomBlass"></div>
+  </header>
+  <section class="play">
+    <div class="inner">
+
+      <div class="babyDino"><img src="img/babyDino.png" height="180" width="253" alt=""></div>
+      <h1>あそびかた</h1>
+      <p class="playText">ディノブックはiPadのデジタル絵本です。<br>iPadのなかに恐竜たちがいっぱい。<br>
+      主人公は青い首長竜のこどもディノです。<br>
+      パノラマに広がった恐竜たちの世界から<br>ディノをさがしてください。</p>
+      <div class="ipadAir"><img src="img/ipadAir.png" alt=""></div>
+    </div>
+
+    <div class="stego"><img src="img/stego.png" alt=""></div>
+    <div class="tirano"><img src="img/tirano.png" alt=""></div>
+    <div class="bottomBlass">
+        <p class="copyright">Copyright &copy; PANON PUBLIC. All Rights Reserved.</p>
+    </div>
+  </section>
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.slim.min.js"></script>
+<script>
+    $(function(){
+        // Scroll Event
+        $(window).scroll(function(){
+            // Scroll position
+            var scrollNum = $(this).scrollTop();
+            console.log(scrollNum);
+
+            // もしスクロール座標が０以上３６０以下の間だったら
+            if(scrollNum > 0 && scrollNum <= 360){
+            // .pitera
+            $('.putera').css('transform','translateY('+scrollNum*0.6+'px)');
+            // .momDino
+            $('.momDino').css('transform','translateX('+scrollNum*0.3+'px)');
+            // .childDino
+            $('.childDino').css('transform','translateX('+scrollNum*0.3+'px)');
+
+        }else if (scrollNum > 360) {
+            // もしスクロール座標が360以上だったら
+
+            $('.tirano').css('transform','translateX('+scrollNum*-0.6+'px)');
+            $('.stego').css('transform','translateY('+scrollNum*-0.3+'px)');
+
+        }
+
+        });
+
+    });
+
+</script>
+
+</body>
+</html>

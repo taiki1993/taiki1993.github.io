@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>material | three.js</title>
+<style>
+body{
+    margin: 0;
+}
+</style>
+</head>
+<body>
+    <div id="stage"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script>
+    window.addEventListener('load',function(){
+        // シーン
+        var scene = new THREE.Scene();
+        // カメラ
+        var camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 1000);
+        camera.position.set(100,100,300);
+        camera.lookAt(scene.position);
+
+        // 光源
+        var ambientLight = new THREE.AmbientLight(0x404040); //光の色
+        scene.add(ambientLight);
+        var light = new THREE.DirectionalLight( 0xffffff, 1);
+        scene.add(light);
+        light.position.set(0,150,30);
+
+        // ヘルパー
+        var gridHelper = new THREE.GridHelper(1000,50);
+        scene.add(gridHelper);
+        var axisHelper = new THREE.AxisHelper(1000);
+        scene.add(axisHelper);
+        var lightHelper = new THREE.DirectionalLightHelper(light,40);
+        scene.add(lightHelper);
+
+        // コントロール
+        var controls = new THREE.OrbitControls(camera);
+
+
+        // Boxの配置
+        // 1. ジオメトリ
+        var boxGeometry = new THREE.BoxGeometry(50,50,50);
+        // 2. マテリアル
+        var boxMaterial = new THREE.MeshLambertMaterial({color:0x4caf50});
+        // 3. メッシュ
+        var box = new THREE.Mesh(boxGeometry, boxMaterial);
+        // 4. シーンに配置
+        scene.add(box);
+        box.position.set(0, 70, 0);
+
+
+        // Sphere
+        var sphereGeometry = new THREE.SphereGeometry(30,20,20);
+        var sphereMaterial = new THREE.MeshPhongMaterial({color:0x4caf50});
+        var sphere = new THREE.Mesh(sphereGeometry,sphereMaterial);
+        sphere.position.set(50,60,50);
+        scene.add(sphere);
+
+        // Plane
+        var planeGeometry = new THREE.PlaneGeometry(200,200);
+        var planeMaterial = new THREE.MeshLambertMaterial({color:0x4757FF, side: THREE.DoubleSide});
+        var plane = new THREE.Mesh(planeGeometry,planeMaterial);
+        plane.position.set(0,0,0);
+        plane.rotation.x = THREE.Math.degToRad(90);
+        scene.add(plane);
+
+        var renderer = new THREE.WebGLRenderer(); // レンダラー
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0xefefef); // 背景色
+        renderer.setPixelRatio(window.devicePixelRatio); // デバイスピクセル対応
+        document.querySelector('#stage').appendChild(renderer.domElement);
+        // renderer.render(scene,camera); // レンダリング実行
+
+        function tick(){
+            requestAnimationFrame(tick);
+            controls.update(); // controlsをアップデートさせる
+            renderer.render(scene, camera);
+        }
+        tick();
+    });
+    </script>
+</body>
+</html>

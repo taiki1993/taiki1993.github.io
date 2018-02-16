@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-UA-Compatible" content="ie=edge">
+<title>group | three.js</title>
+<style>
+body{
+    margin: 0;
+}
+</style>
+</head>
+<body>
+    <div id="stage"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/89/three.min.js"></script>
+    <script src="js/OrbitControls.js"></script>
+    <script>
+    window.addEventListener('load',function(){
+        // シーン
+        var scene = new THREE.Scene();
+        // カメラ
+        var camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight);
+        camera.position.set(50,50,100);
+        camera.lookAt(scene.position);
+
+        // 光源
+        var ambientLight = new THREE.AmbientLight(0x404040); //光の色
+        scene.add(ambientLight);
+        var light = new THREE.DirectionalLight( 0xffffff, 1);
+        scene.add(light);
+        light.position.set(0,300,30);
+
+        // ヘルパー
+        var gridHelper = new THREE.GridHelper(1000,50);
+        scene.add(gridHelper);
+        var axisHelper = new THREE.AxisHelper(1000);
+        scene.add(axisHelper);
+        var lightHelper = new THREE.DirectionalLightHelper(light,40);
+        // scene.add(lightHelper);
+
+        // コントロール
+        var controls = new THREE.OrbitControls(camera);
+
+
+        // ジオメトリ
+        var geometry = new THREE.Geometry();
+        for (var i = 0; i < 10000; i++) {
+            var star = new THREE.Vector3();
+            star.x = Math.random() * 500 - 250;
+            star.y = Math.random() * 500 - 250;
+            star.z = Math.random() * 500 - 250;
+            star.velocityX = (Math.random() - 0.5) /3; // -0.16〜+0.16
+            star.velocityY = 0.1 + Math.random() / 5; // 0.1〜0.3
+            star.velocityZ = (Math.random() - 0.5) / 3; // -0.16〜+0.16
+            geometry.vertices.push(star); // ジオメトリの頂点データを追加
+        }
+        var material = new THREE.PointsMaterial({
+            size: 2, // サイズ
+            transparent: true, // 透過
+            opacity: 0.8, // 透明度
+            //map: texture,
+            sizeAttenuation: true, //パーティクルの大きさ
+            color: 0x00ff00 // 色
+        });
+        var mesh = new THREE.Points(geometry,material);
+        scene.add(mesh);
+
+
+        var renderer = new THREE.WebGLRenderer(); // レンダラー
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setClearColor(0x000000); // 背景色
+        renderer.setPixelRatio(window.devicePixelRatio); // デバイスピクセル対応
+        document.querySelector('#stage').appendChild(renderer.domElement);
+        // renderer.render(scene,camera); // レンダリング実行
+
+        function tick(){
+            requestAnimationFrame(tick);
+
+            var vertices = mesh.geometry.vertices;
+            vertices.forEach(function(v){
+                v.y = v.y - (v.velocityY);
+                v.x = v.x - (v.velocityX);
+                v.z = v.z - (v.velocityZ);
+                if (v.y <= -300){
+                    v.y = 300;
+                }
+                if (v.x <= -20 || v.x >= 20) {
+                    v.velocityX = v.velocityX * -1;
+                }
+                if (v.z <= -20 || v.z >= 20) {
+                    v.velocityZ = v.velocityZ * -1;
+                }
+            });
+            mesh.geometry.verticesNeedUpdate = true;
+
+
+
+
+
+            controls.update(); // controlsをアップデートさせる
+            renderer.render(scene, camera);
+        }
+        tick();
+    });
+    </script>
+</body>
+</html>

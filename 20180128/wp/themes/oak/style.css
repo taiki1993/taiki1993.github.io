@@ -1,0 +1,14 @@
+/*
+ Theme Name:   OAK
+ Description:  OAK custom Theme.
+ Author:       Maki Tobisawa
+ Author URI:   http://frog-right.com
+ Version:      1.0.0
+*/
+.read-more-blog-text{
+    position: absolute;
+    right: 36px;
+    bottom: 6px;
+    font-size: 14px;
+    color: #fff;
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Parallax Test</title>
+  <style>
+  .container{
+    width: 1000px;
+    height: 5000px;
+    position: relative;
+  }
+  .trikera{
+    width: 200px;
+    position: absolute;
+    top: 400px;
+    left: 50px;
+  }
+  .trikera img{
+    width: 200px;
+    height: auto;
+  }
+  .stego{
+    width: 200px;
+    position: absolute;
+    top: 400px;
+    left: 300px;
+    // 動きが残るやつ！
+    transition: 1s cubic-bezier(0.63,-0.01, 1, 0.14); //検証のcssから取ってくる！
+  }
+  .stego img{
+    width: 200px;
+    height: auto;
+  }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="trikera"><img src="img/trikera.png" alt=""></div>
+    <div class="stego"><img src="img/stego.png" alt=""></div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.0/jquery.slim.min.js"></script>
+  <script>
+
+    // DOM Load
+    $(function(){
+        // スクロールイベント
+        $(window).scroll(function(){
+            // スクロールしたらここが呼ばれる
+
+            // スクロールした値を取得
+            var scrollNum = $(this).scrollTop();
+            console.log(scrollNum);
+
+            // .stegoのcssのtranslateYをずらす
+            $('.stego').css('transform','translateY('+ scrollNum*0.6 +'px)');
+            // （0.6の所にマイナス値をいれると逆に上がる）
+
+        });
+
+    });
+
+  </script>
+</body>
+</html>
