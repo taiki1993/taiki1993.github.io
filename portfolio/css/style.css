@@ -1,0 +1,155 @@
+body{
+    font-size:14px;
+    font-family:Avenir, -apple-system, BlinkMacSystemFont, "Helvetica Neue", "Yu Gothic", YuGothic, "ヒラギノ角ゴ ProN W3", Hiragino Kaku Gothic ProN, Arial, "メイリオ", Meiryo, sans-serif;
+    line-height:1.6;
+    font-weight:normal;
+    width: 100vw;
+    height: 100vh;
+    background-color: #201803;
+    position: relative;
+}
+
+
+/* Header */
+header {
+  position: absolute;
+  width: 100%;
+  height: 86px;
+  color: #201803;
+}
+.title {
+  position: absolute;
+  top: 34px;
+  left: 33px;
+}
+.menu {
+  position: absolute;
+  top: 34px;
+  right: 33px;
+}
+.menu ul {
+  display: flex;
+}
+.menu a {
+  font-family: Avenir;
+  font-size: 14px;
+  text-decoration: none;
+  letter-spacing: 0.8px;
+  color: #717171;
+  margin-left: 80px;
+}
+.menu a:hover {
+  opacity: 0.5;
+}
+.res_menu{
+  display: none;
+  position: absolute;
+  text-align: right;
+  top: 34px;
+  right: 33px;
+}
+.res_menu p{
+  color: #717171;
+}
+.green {
+  display: none;
+  position: absolute;
+  float: left;
+  width: 50%;
+  height: 86px;
+  border-bottom: solid 24px #264c43;
+}
+.orange {
+  display: none;
+  position: absolute;
+  right: 0;
+  width: 50%;
+  height: 86px;
+  border-bottom: solid 24px #98482e;
+}
+@media(max-width:760px){
+  .menu {
+    display:none;
+  }
+  .res_menu {
+    display: block;
+  }
+  .green {
+    display: block;
+  }
+  .orange {
+    display: block;
+  }
+}
+
+/* Main */
+.intro {
+  position: absolute;
+  top: 200px;
+  right: 33px;
+}
+.mainpic {
+  position: relative;
+  top: 217px;
+}
+.mainpic img {
+  width: 100%;
+  height: auto;
+}
+@media(max-width:760px){
+  .mainpic {
+    display: none;
+  }
+}
+@media(max-width:540px){
+}
+
+/* Footer */
+footer {
+  width: 100%;
+  height: 42px;
+  position: absolute;
+  bottom: 0;
+  background-color: #ececec;
+}
+.contactbox {
+  position: absolute;
+  top: 10px;
+  left: 33px;
+}
+.contactbox ul {
+  display: flex;
+}
+.contactbox a {
+  font-family: Avenir;
+  font-size: 12px;
+  margin-right: 10px;
+  text-decoration: none;
+  letter-spacing: 0.6px;
+  color: #201803;
+}
+.contactbox a:hover {
+  opacity: 0.5;
+}
+.syasen {
+  color: #717171;
+  margin-right: 10px;
+}
+.journey {
+  font-family: Avenir;
+  font-size: 14px;
+  color: #717171;
+  letter-spacing: 0.6px;
+  position: absolute;
+  top: 10px;
+  right: 33px;
+  text-decoration: none;
+}
+.journey:hover {
+  opacity: 0.5;
+}
+@media(max-width:760px){
+  .contactbox {
+    display: none;
+  }
+}
