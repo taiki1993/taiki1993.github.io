@@ -94,6 +94,7 @@ header {
   position: absolute;
   top: 200px;
   right: 33px;
+  z-index: 5;
 }
 .mainpic {
   width: 100vw;
@@ -106,12 +107,15 @@ header {
   height: auto;
 }
 .lineart {
+  display: none;
   position: absolute;
   width: 100vw;
   height: auto;
   top: 110px;
+  z-index: 1;
 }
 .lineart img {
+  display: none;
   width: 100vw;
 }
 @media(max-width:1200px){
@@ -128,6 +132,13 @@ header {
 @media(max-width:726px){
   .mainpic img {
     display: none;
+  }
+  .lineart {
+    display: block;
+  }
+  .lineart img {
+    display: block;
+    opacity: 0.4;
   }
 }
 @media(max-width:626px){
