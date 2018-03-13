@@ -105,6 +105,15 @@ header {
   width: 100%;
   height: auto;
 }
+.lineart {
+  position: absolute;
+  width: 100vw;
+  height: auto;
+  top: 50vh;
+}
+.lineart img {
+  width: 100vw;
+}
 @media(max-width:1200px){
   .mainpic {
     top: 287px;
@@ -113,9 +122,7 @@ header {
 @media(max-width:900px){
   .mainpic {
     top: 357px;
-  }
-  .mainpic img {
-    display: none;
+    border-bottom: none;
   }
 }
 @media(max-width:726px){
