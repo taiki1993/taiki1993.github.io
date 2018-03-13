@@ -146,7 +146,7 @@ header {
 @media(max-width:626px){
   .intro img {
     float: right;
-    width: 320px;
+    width: 80%;
   }
 }
 
