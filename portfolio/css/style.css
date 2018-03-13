@@ -71,6 +71,9 @@ header {
   border-bottom: solid 24px #98482e;
 }
 @media(max-width:726px){
+  .title img {
+    width: 80%;
+  }
   .menu {
     display:none;
   }
