@@ -99,6 +99,7 @@ header {
   width: 100vw;
   position: relative;
   top: 217px;
+  border-bottom: solid 1px #717171;
 }
 .mainpic img {
   width: 100%;
@@ -112,6 +113,9 @@ header {
 @media(max-width:900px){
   .mainpic {
     top: 357px;
+  }
+  .mainpic img {
+    display: none;
   }
 }
 @media(max-width:726px){
