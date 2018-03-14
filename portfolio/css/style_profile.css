@@ -216,6 +216,15 @@ header {
     bottom: 0;
     margin: 0 auto;
   }
+  .profile_letter p {
+    width: 200px;
+    right: 0;
+    color:#f0f4f4;
+    margin-top: 10px;
+    font-family: Avenir;
+    font-size: 12px;
+    letter-spacing: 0.6px;
+  }
 }
 
 /* Footer */
