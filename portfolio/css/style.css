@@ -169,6 +169,23 @@ header {
   display: none;
   width: 100vw;
 }
+.res_menu_sns {
+  display: none;
+  position: fixed;
+  bottom: 80px;
+  left: 33px;
+}
+.res_menu_sns li {
+  margin-top: 8px;
+}
+.res_menu_sns a {
+  color: #717171;
+  font-family: Avenir;
+  font-size: 12px;
+  letter-spacing: 0.8px;
+  text-decoration: none;
+}
+
 @media(max-width:1200px){
   .mainpic {
     top: 287px;
@@ -190,6 +207,9 @@ header {
   .lineart img {
     display: block;
     opacity: 0.4;
+  }
+  .res_menu_sns {
+    display: block;
   }
 }
 @media(max-width:626px){
