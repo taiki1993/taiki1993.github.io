@@ -22,11 +22,13 @@ header {
   position: absolute;
   top: 34px;
   left: 33px;
+  z-index: 9999;
 }
 .menu {
   position: absolute;
   top: 34px;
   right: 33px;
+  z-index: 9999;
 }
 .menu ul {
   display: flex;
@@ -41,6 +43,7 @@ header {
 }
 .menu a:hover {
   opacity: 0.5;
+  cursor: pointer;
 }
 .res_menu{
   display: none;
@@ -51,6 +54,9 @@ header {
 }
 .res_menu p{
   color: #717171;
+}
+.res_menu:hover {
+  cursor: pointer;
 }
 .green {
   display: none;
@@ -68,7 +74,10 @@ header {
   height: 86px;
   border-bottom: solid 24px #98482e;
 }
-@media(max-width:826px){
+@media(max-width:726px){
+  .title img {
+    width: 80%;
+  }
   .menu {
     display:none;
   }
@@ -83,6 +92,52 @@ header {
   }
 }
 
+/* Responsive_menu */
+.responsive_menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  width: 100vw;
+  height: 100vh;
+  background-color: #717171;
+  opacity: 0.94;
+  z-index: 9999;
+  text-align: center;
+}
+.responsive_menu p {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  color: #ffffff;
+}
+.responsive_menu p:hover {
+  cursor: pointer;
+}
+.responsive_menu ul {
+  position: absolute;
+  top: 130px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+.responsive_menu li {
+  margin-top: 30px;
+}
+.responsive_menu a {
+  text-decoration: none;
+  color: #ffffff;
+  letter-spacing: 1px;
+}
+.res_menu-open {
+  display: block;
+  z-index: 9999;
+}
+
 /* for profile */
 .green_profile {
   position: absolute;
@@ -90,6 +145,7 @@ header {
   width: 50%;
   height: 86px;
   border-bottom: solid 24px #264c43;
+  overflow: hidden;
 }
 .orange_profile {
   position: absolute;
@@ -97,6 +153,7 @@ header {
   width: 50%;
   height: 86px;
   border-bottom: solid 24px #98482e;
+  overflow: hidden;
 }
 
 /* Main_Profile */
