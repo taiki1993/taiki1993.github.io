@@ -1123,6 +1123,9 @@ footer {
   opacity: 0.5;
 }
 @media(max-width:760px){
+  footer {
+    z-index: 9998;
+  }
   .contactbox {
     display: none;
   }
