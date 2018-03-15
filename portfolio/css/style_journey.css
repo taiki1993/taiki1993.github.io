@@ -59,6 +59,27 @@ header {
   color: #104453;
   margin-top: 24px;
 }
+.name li {
+  font-family: Avenir-Roman;
+  font-size: 10px;
+  letter-spacing: 1px;
+  line-height: 18px;
+  color: #104453;
+}
+@media(max-width:700px){
+  .name li {
+   -moz-transform: scale(0.6);
+   -webkit-transform: scale(0.6);
+   -o-transform: scale(0.6);
+   -ms-transform: scale(0.6);
+   transform: scale(0.6);
+   -moz-transform-origin: 0px 0px;
+   -webkit-transform-origin: 0px 0px;
+   -o-transform-origin: 0px 0px;
+   -ms-transform-origin: 0px 0px;
+   transform-origin: 0px 0px;
+  }
+}
 
 /* Responsive_menu */
 .responsive_menu {
