@@ -38,34 +38,26 @@ header {
   margin-left: 50%;
 }
 
-/* photos */
-.photo1 {
-  width: 42%;
-  height: auto;
-  position: relative;
-  top: 82px;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  margin: 0 auto;
+/* name */
+.name {
+  position: fixed;
+  top: 34px;
+  left: 33px;
+  text-align: left;
 }
-.photo_1 {
-  width: 100%;
-  height: auto;
-  position: absolute;
-  text-align: center;
-}
-.photo_1 img {
-  width: 100%;
-  height: auto;
-}
-.photo1 p {
-  position: relative;
-  top: 10px;
+.name h1 {
+  font-family: Avenir-Roman;
+  font-size: 12px;
+  letter-spacing: 2px;
   color: #104453;
-  font-family: Avenir;
+}
+.name ul {
+  font-family: Avenir-Roman;
   font-size: 10px;
-  letter-spacing: 1.2px;
+  letter-spacing: 1px;
+  line-height: 18px;
+  color: #104453;
+  margin-top: 24px;
 }
 
 /* Responsive_menu */
@@ -112,6 +104,118 @@ header {
 .res_menu-open {
   display: block;
   z-index: 9999;
+}
+
+/* menu */
+.journey_menu {
+  position: fixed;
+  top: 34px;
+  right: 33px;
+}
+.journey_menu img {
+  width: 24px;
+}
+.journey_menu-open {
+  display: block;
+  z-index: 9999;
+}
+
+/* photos */
+.photobox {
+  width: 42%;
+  position: relative;
+  top: 82px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+  margin-bottom: 30%;
+}
+.photo1 {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+.photo_1 {
+  width: 100%;
+  height: auto;
+  position: relative;
+  text-align: center;
+}
+.photo_1 img {
+  width: 100%;
+  height: auto;
+}
+.photo1 p {
+  position: relative;
+  top: 6px;
+  color: #104453;
+  font-family: Avenir;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+}
+
+.photo2 {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 40px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+.photo_2 {
+  width: 100%;
+  height: auto;
+  position: relative;
+  text-align: center;
+}
+.photo_2 img {
+  width: 100%;
+  height: auto;
+}
+.photo2 p {
+  position: relative;
+  top: 6px;
+  color: #104453;
+  font-family: Avenir;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+}
+
+.photo3 {
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: 0 auto;
+}
+.photo_3 {
+  width: 100%;
+  height: auto;
+  position: relative;
+  text-align: center;
+}
+.photo_3 img {
+  width: 100%;
+  height: auto;
+}
+.photo3 p {
+  position: relative;
+  top: 6px;
+  color: #104453;
+  font-family: Avenir;
+  font-size: 10px;
+  letter-spacing: 1.2px;
 }
 
 

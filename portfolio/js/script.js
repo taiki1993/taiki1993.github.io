@@ -67,4 +67,12 @@ $(function(){
       $('.res_pf_inst7').removeClass('pic_box7-open').removeClass('fade-in');
   });
 
+  // journey menuber
+  $('.journey_menu').on('click',function(){
+     $('.responsive_menu').addClass('journey_menu-open').addClass('fade-in');
+  });
+  $('.responsive_menu p').on('click',function(){
+      $('.responsive_menu').removeClass('journey_menu-open').removeClass('fade-in');
+  });
+
 });
