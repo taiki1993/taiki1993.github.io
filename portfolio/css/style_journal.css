@@ -24,11 +24,16 @@ header {
   position: absolute;
   top: 34px;
   left: 33px;
+  z-index: 9999;
+}
+.title:hover {
+  cursor: pointer;
 }
 .menu {
   position: absolute;
   top: 34px;
   right: 33px;
+  z-index: 9999;
 }
 .menu ul {
   display: flex;
@@ -43,6 +48,7 @@ header {
 }
 .menu a:hover {
   opacity: 0.5;
+  cursor: pointer;
 }
 .res_menu {
   display: none;
@@ -58,7 +64,7 @@ header {
   cursor: pointer;
 }
 .green {
-  display: none;
+  display: block;
   position: absolute;
   float: left;
   width: 50%;
@@ -66,7 +72,7 @@ header {
   border-bottom: solid 24px #264c43;
 }
 .orange {
-  display: none;
+  display: block;
   position: absolute;
   right: 0;
   width: 50%;
