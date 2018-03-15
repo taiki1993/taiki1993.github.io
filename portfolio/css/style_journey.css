@@ -67,6 +67,9 @@ header {
   color: #104453;
 }
 @media(max-width:700px){
+  .name h1 {
+    font-size: 10px;
+  }
   .name li {
    -moz-transform: scale(0.6);
    -webkit-transform: scale(0.6);
@@ -139,6 +142,11 @@ header {
 .journey_menu-open {
   display: block;
   z-index: 9999;
+}
+@media(max-width:700px){
+  .journey_menu img {
+    width: 18px;
+  }
 }
 
 /* photos */
